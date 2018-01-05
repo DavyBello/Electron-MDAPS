@@ -4,6 +4,7 @@
   "main": "main/index.js",
   "license": "MIT",
   "author": "Bello Oladipupo <bellooladipupo41@gmail.com>",
+  "repository": "https://github.com/DavyBello/Electron-MDAPS",
   "scripts": {
     "start": "electron .",
     "build": "next build renderer && next export renderer",
