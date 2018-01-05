@@ -1,0 +1,29 @@
+{
+  "name": "electron-MDAP",
+  "version": "1.1.0",
+  "main": "main/index.js",
+  "license": "MIT",
+  "author": "Bello Oladipupo <bellooladipupo41@gmail.com>",
+  "scripts": {
+    "start": "electron .",
+    "build": "next build renderer && next export renderer",
+    "dist": "npm run build && bundle"
+  },
+  "bundle": {
+    "name": "ElectronNext"
+  },
+  "devDependencies": {
+    "bundle": "^2.0.1",
+    "electron": "^1.7.10",
+    "material-ui": "^0.19.4",
+    "next": "^4.2.1",
+    "react": "^16.1.1",
+    "react-bootstrap": "^0.31.5",
+    "react-dom": "^16.1.1"
+  },
+  "dependencies": {
+    "app-root-path": "^2.0.1",
+    "electron-is-dev": "^0.3.0",
+    "electron-next": "^3.1.3"
+  }
+}
