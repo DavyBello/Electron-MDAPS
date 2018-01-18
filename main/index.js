@@ -12,9 +12,9 @@ app.on('ready', async () => {
   await prepareNext('./renderer')
 
   const mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600
+    autoHideMenuBar: true
   })
+  mainWindow.maximize();
 
   const devPath = 'http://localhost:8000/start'
 
