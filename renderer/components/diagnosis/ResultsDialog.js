@@ -18,7 +18,7 @@ export default class extends React.Component {
     //console.log(this.props);
     let diagnosis = this.props.diagnosis;
     let empty = (diagnosis.perfectFits.length === 0 && diagnosis.overFits.length === 0 && diagnosis.underFits.length === 0)
-    console.log(diagnosis);
+    //console.log(diagnosis);
     const actions = [
       <FlatButton
         label="Cancel"
@@ -52,7 +52,7 @@ export default class extends React.Component {
             {(diagnosis && diagnosis.perfectFits.length === 1) && (
               <div>
                 <h3>{diagnosis.perfectFits[0].disease.title} is diagnosed</h3>
-                <h4></h4>
+                <h4>{diagnosis.perfectFits[0].disease.remedy}</h4>
               </div>
             )}
             {(diagnosis && diagnosis.perfectFits.length > 1) && (
@@ -71,6 +71,7 @@ export default class extends React.Component {
                 <h3>
                   {(diagnosis.perfectFits.length > 0) && 'Other '}
                   Possible Disease: {diagnosis.overFits[0].disease.title}</h3>
+                <h4>{diagnosis.overFits[0].disease.remedy}</h4>
                 <h4>Specialist Closer Interview and Examination is recommended</h4>
               </div>
             )}
@@ -92,6 +93,7 @@ export default class extends React.Component {
                 <h3>
                   {(diagnosis.perfectFits.length > 0 || diagnosis.underFits.length > 0) && 'Other '}
                   Possible Disease: {diagnosis.underFits[0].disease.title} is diagnosed</h3>
+                  <h4>{diagnosis.underFits[0].disease.remedy}</h4>
                 <h4>Specialist Closer Interview and Examination is recommended</h4>
               </div>
             )}
