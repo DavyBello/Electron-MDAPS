@@ -20,7 +20,7 @@ export default class extends React.Component {
         padding: '20px',
         backgroundColor: '#ddd',
         minHeight: '100vh',
-        backgroundImage: "url('static/img/HP005.jpg')",
+        backgroundImage: "url('/static/img/HP005.jpg')",
         backgroundRepeat: 'repeat',
         backgroundSize: '700px'
       }} >
