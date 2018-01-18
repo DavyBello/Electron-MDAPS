@@ -95,10 +95,7 @@ export default class extends React.Component {
             </Col>
             <Col md={4}>
               Remedy : <TextField disabled={true} multiLine={true} rows={2} value={disease.remedy}/>
-            </Col>
-            <Col md={4}>
-              Dosage : <TextField disabled={true} multiLine={true} rows={2} value={disease.dosage}/>
-            </Col>
+            </Col>            
           </Row>
           <h4>Symptoms</h4>
           <Row>
