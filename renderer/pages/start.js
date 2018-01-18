@@ -33,7 +33,7 @@ class Home extends React.Component {
             justifyContent: 'center',
             alignItems: 'center',
             minHeight: '100vh',
-            backgroundImage: "url('static/img/smg-home-img.jpg')",
+            backgroundImage: "url('/static/img/smg-home-img.jpg')",
             backgroundSize: 'contain'
           }}>
             <Card style={style.cardStyle}>
@@ -42,7 +42,7 @@ class Home extends React.Component {
                   textAlign: 'center',
                   color: 'rgb(0, 188, 212)'
                 }}>
-                  <h5>Case Study of ABSUTH, ABA</h5>
+                  <h5>Case Study of LASU Hospital</h5>
                 </div>
               </CardTitle>
               <div style={{
