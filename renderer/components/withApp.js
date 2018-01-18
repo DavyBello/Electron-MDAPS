@@ -5,35 +5,13 @@ import {MuiThemeProvider, getMuiTheme, grey500} from 'material-ui/styles'
 import Main from './main'
 
 export default function withApp(Child) {
-  class WrappedComponent extends React.Component {
-    static async getInitialProps(context) {
-      //For Material-UI SSR
-      const userAgent = context.req
-        ? context.req.headers['user-agent']
-        : navigator.userAgent;
-      const isServer = !!context.req;
-
-      let initData = {}
-
-      return {initData, isServer, userAgent}
-    }
-
-    constructor(props, context) {
-      super(props, context)
-
-      this.state = {}
-    }
-
+  class WrappedComponent extends React.Component {    
     render() {
-      //console.log(this.props);
-      const {userAgent} = this.props;
-
       return (
         <MuiThemeProvider muiTheme={getMuiTheme({
           palette: {
             canvasColor: grey500
-          },
-          userAgent: userAgent
+          }
         })}>
           <Main>
             <Head>
