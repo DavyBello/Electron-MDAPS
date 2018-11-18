@@ -3,8 +3,9 @@ import React from 'react'
 import Diagnosis from '../components/diagnosis/index'
 import withApp from '../components/withApp'
 
+import db from '../data/db'
 import symptoms from '../data/symptoms.js'
-import patients from '../data/patients.js'
+// import patients from '../data/patients.js'
 
 import performDiagnosis from './lib/performDiagnosis'
 
@@ -15,13 +16,19 @@ class DiagnosisPage extends React.Component {
     this.state = {
       open: false,
       symptoms: symptoms,
-      patients: patients,
+      patients: [],
       results : {
         perfectFits : [],
         overFits : [],
         underFits : []
       }
     }
+  }
+
+  async componentWillMount() {
+    const symptoms = await db.symptoms.find({});
+    const patients = await db.patients.find({});
+    this.setState({ symptoms, patients })
   }
 
   doDiagnosis = (symptomsArray) => {

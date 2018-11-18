@@ -1,0 +1,3 @@
+{"id":"1","proposedTreatment":"Male","remark":"20","patientId":"1","date":"teve","possibleDiseasesIds":[""],"symptomsIds":["4","10"],"_id":"13bGQNDBdFCOtn3w","createdAt":{"$$date":1542542839316},"updatedAt":{"$$date":1542542839316}}
+{"id":"3","proposedTreatment":"Male","remark":"20","patientId":"2","date":"teve","possibleDiseasesIds":[""],"symptomsIds":["7","12"],"_id":"DjRvkpFWO0b6DZDL","createdAt":{"$$date":1542542839316},"updatedAt":{"$$date":1542542839316}}
+{"id":"2","proposedTreatment":"Male","remark":"20","patientId":"2","date":"teve","possibleDiseasesIds":[""],"symptomsIds":["6","3"],"_id":"z2pedkjuasbgcTRd","createdAt":{"$$date":1542542839316},"updatedAt":{"$$date":1542542839316}}

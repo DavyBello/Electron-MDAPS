@@ -3,8 +3,9 @@ import React from 'react'
 import DiseaseRecords from '../components/diseaseRecords/index'
 import withApp from '../components/withApp'
 
-import symptoms from '../data/symptoms.js'
-import diseases from '../data/diseases.js'
+import db from '../data/db'
+// import symptoms from '../data/symptoms.js'
+// import diseases from '../data/diseases.js'
 
 class DiseaseRecordsPage extends React.Component {
   constructor(props, context) {
@@ -12,9 +13,15 @@ class DiseaseRecordsPage extends React.Component {
 
     this.state = {
       open: false,
-      symptoms: symptoms,
-      diseases: diseases,
+      symptoms: [],
+      diseases: [],
     }
+  }
+
+  async componentWillMount() {
+    const symptoms = await db.symptoms.find({});
+    const diseases = await db.diseases.find({});
+    this.setState({ symptoms, diseases })
   }
 
   render() {

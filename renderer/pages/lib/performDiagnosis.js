@@ -1,7 +1,9 @@
-import diagnosis from '../../data/diagnosis.js'
+import db from '../../data/db'
+
+// import diagnosis from '../../data/diagnosis.js'
 import diseases from '../../data/diseases.js'
-import patients from '../../data/patients.js'
-import symptoms from '../../data/symptoms'
+// import patients from '../../data/patients.js'
+// import symptoms from '../../data/symptoms'
 
 
 //let symptomsArray = ['2','5','6','8','11','12']

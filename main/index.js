@@ -7,8 +7,12 @@ const isDev = require('electron-is-dev')
 const prepareNext = require('electron-next')
 const { resolve } = require('app-root-path')
 
+// const db = require('../data/db');
+const bootstrapDB = require('../renderer/data/bootstrapDB');
+
 // Prepare the renderer once the app is ready
 app.on('ready', async () => {
+  await bootstrapDB();
   await prepareNext('./renderer')
 
   const mainWindow = new BrowserWindow({

@@ -3,7 +3,8 @@ import React from 'react'
 import PatientRecords from '../components/patientRecords/index'
 import withApp from '../components/withApp'
 
-import patients from '../data/patients.js'
+import db from '../data/db'
+// import patients from '../data/patients.js'
 
 class PatientRecordsPage extends React.Component {
   constructor(props, context) {
@@ -11,8 +12,13 @@ class PatientRecordsPage extends React.Component {
 
     this.state = {
       open: false,
-      patients: patients
+      patients: []
     }
+  }
+
+  async componentWillMount(){
+    const patients = await db.patients.find({});
+    this.setState({ patients })
   }
 
   render() {

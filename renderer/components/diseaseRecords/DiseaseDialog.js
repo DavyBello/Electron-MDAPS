@@ -11,26 +11,30 @@ let symptoms = [];
 export default class extends React.Component {
 
   constructor(props) {
-    console.log(props);
+    // console.log(props);
     super(props)
 
     this.state = {
       patient: {},
-      symptoms: symptoms,
+      symptoms: [],
     }
   }
   componentWillReceiveProps(nextProps){
-    //console.log(nextProps);
-    let disease = nextProps.disease || {symptomsIds: []}
-    nextProps.symptoms.map((symptom, index) => {
-      let match = disease.symptomsIds.find((dSymptom)=>(dSymptom === symptom.id))
-      if (match)
-        symptoms[index] = {id: symptom.id,name: symptom.name,checked: true};
-      else
-        symptoms[index] = {id: symptom.id,name: symptom.name,checked: false};
-    })
-    this.state.symptoms = symptoms;
-    //console.log(symptoms);
+    // console.log(nextProps);
+    let disease = { symptomsIds: [], ...nextProps.disease }
+
+    if (disease.symptomsIds.length > 0) {
+      nextProps.symptoms.map((symptom, index) => {
+        let match = disease.symptomsIds.find((dSymptom)=>(dSymptom === symptom.id))
+        if (match)
+          symptoms[index] = { ...symptoms[index], checked: true };
+        else
+          symptoms[index] = { ...symptoms[index], checked: false };
+      })
+      // this.state.symptoms = symptoms;
+      this.setState({ symptoms })
+      //console.log(symptoms);
+    }
   }
 
   updateCheck(index) {
@@ -104,7 +108,7 @@ export default class extends React.Component {
                 <Col md={4}>
                   <Checkbox
                     label={symptom.name}
-                    checked={this.state.symptoms[index].checked}
+                  checked={symptom.checked}
                     onCheck={()=> this.updateCheck(index)}
                     style={styles.checkbox}
                   />

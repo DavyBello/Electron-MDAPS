@@ -87,7 +87,7 @@ export default class extends React.Component {
           </TableHeader>
           <TableBody deselectOnClickaway={false}>
             {this.props.diseases.map((disease, index)=>(
-              <TableRow selected={this.isSelected(index)}>
+              <TableRow selected={this.isSelected(index)} key={index}>
                 <TableRowColumn style={{width: styles.TableRowColumnIdWidth}}>{index+1}</TableRowColumn>
                 <TableRowColumn style={{width: styles.TableRowColumnTitleWidth}}>{disease.title}</TableRowColumn>
                 <TableRowColumn>{disease.description}</TableRowColumn>
